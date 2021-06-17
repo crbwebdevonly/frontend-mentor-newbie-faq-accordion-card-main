@@ -1,0 +1,205 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+html {
+     font-family: "Kumbh Sans", sans-serif; /*400/700*/
+     font-size: 12px;
+}
+body {
+     /* Background gradient:
+
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%) */
+}
+
+.outer-container {
+     width: 375px;
+     padding: 8rem 4rem;
+     margin: 0 auto;
+     background-image: linear-gradient(hsl(273, 41%, 43%), hsl(240, 73%, 65%));
+     background-repeat: no-repeat;
+}
+
+.inner-container {
+     background: white;
+     border-radius: 20px;
+     padding: 0;
+     display: flex;
+     flex-direction: column;
+     margin-top: 3rem;
+}
+
+.picture-section .desktop,
+.desktop .box {
+     display: none;
+}
+.picture-section {
+     position: relative;
+}
+.picture-section .mobile {
+     /* position: absolute; */
+}
+.mobile .woman {
+     position: absolute;
+     top: 0;
+     /* margin: 0 auto; */
+     transform: translate(0%, -53%) scale(0.8);
+}
+.mobile .pattern {
+     position: absolute;
+     top: 0;
+     right: 0;
+     transform: translate(-5%, -5%) scale(0.8);
+}
+.title {
+     padding-top: 10rem;
+     font-size: 2.3rem;
+     font-weight: 700;
+     text-align: center;
+}
+
+.item{
+    border-bottom: 2px dotted pink;
+    margin-top: 1rem;
+}
+.question-section{
+    padding: 0 1.3rem ;
+}
+
+.question{
+font-size: 1rem;
+display: flex;
+justify-content: space-between;
+margin-bottom: 1rem;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.question:hover{
+    color: orange;
+}
+img.icon{
+    height: min-content;
+    transition: all 1s ease;
+}
+.question.open{
+font-weight: 700;
+}
+
+.question.open img.icon{
+    transform: rotate(180deg);
+}
+.answer{
+    font-size: 0.85rem;
+    line-height: 1.3rem;
+    color: grey;
+    margin: 1rem 0;
+    display: none;
+    height: 0;
+    transition: all 1s ease;
+}
+
+.answer.open{
+    height: auto;
+    display: block;
+    transition: all 1s ease;
+}
+
+.question-section:last-child{
+    padding-bottom: 3rem;
+}
+
+
+
+/* ======================================================================== */
+/* desktop mode below */
+/* ======================================================================== */
+
+@media screen and (min-width: 600px) {
+     /* body {
+          background-color: red;
+     } */
+     .outer-container {
+          width: 1440px;
+          height: 768px;
+          /* padding: 8rem 20rem; */
+          margin: auto auto;
+          display: grid;
+          place-content: center;
+     }
+     .inner-container {
+          height: 510px;
+          width: 920px;
+          /* margin: 2rem auto; */
+          display: flex;
+          flex-direction: row;
+          z-index: 2;
+     }
+
+     .picture-section {
+          flex-basis: 50%;
+          /* position: relative; */
+          /* position: static; */
+          overflow: hidden;
+     }
+     .question-section {
+          flex-basis: 50%;
+          /* width: 100%; */
+          padding-right: 8rem;
+          padding-left: 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content:space-evenly;
+     }
+
+     .picture-section .desktop {
+          /* position: absolute; */
+          position: relative;
+          display: block;
+          height: 100%;
+          /* background-color: green; */
+     }
+
+     .picture-section .mobile,
+     .mobile img {
+          display: none;
+     }
+
+     .desktop .woman {
+          position: absolute;
+          top: 70px;
+          left: -100px;
+          transform: scale(01);
+     }
+     .desktop .box {
+          display: block;
+          position: absolute;
+          left: 130px;
+          top: 340px;
+          z-index: 9;
+          /* overflow: visible; */
+     }
+     .desktop .pattern {
+          position: absolute;
+          transform: scale(1);
+
+          left: -600px;
+          top: -280px;
+     }
+     img.pattern2 {
+          object-fit: scale-down;
+     }
+     .title{
+         padding-top: 6rem;
+     }
+     .question{
+         padding-bottom: 1rem;
+     }
+     .question.open{
+        padding-bottom: 0rem;
+     }
+
+     /* ======================================================================= */
+     /* end media query */
+}
